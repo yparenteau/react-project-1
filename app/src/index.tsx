@@ -1,19 +1,20 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
 import { App } from './containers/App/App';
+import { AppContainer } from 'react-hot-loader';
 
 declare const module: { hot: any };
 
-// Render function containing the HMR AppContainer
+/* tslint:disable */
+// Component parameters needs to be Uppercase.
 const render = (Component: any) => {
+/* tslint:enable */
   ReactDOM.render(
     <AppContainer>
       <Component />
     </AppContainer>,
     // HTML root element for React app
-    document.getElementById('root')
-  );
+    document.getElementById('root'));
 };
 
 render(App);
