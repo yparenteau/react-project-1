@@ -1,6 +1,6 @@
 {
   "extends": ["tslint-react", "tslint-config-airbnb"],
   "rules": {
-
+    "variable-name": [true, "allow-pascal-case"]
   }
 }

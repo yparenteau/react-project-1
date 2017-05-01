@@ -1,14 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { App } from './containers/App/App';
+
+// TODO: Should not be included in production
 import { AppContainer } from 'react-hot-loader';
 
 declare const module: { hot: any };
 
-/* tslint:disable */
-// Component parameters needs to be Uppercase.
 const render = (Component: any) => {
-/* tslint:enable */
   ReactDOM.render(
     <AppContainer>
       <Component />

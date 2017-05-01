@@ -1,15 +1,18 @@
-const resolve = require('path').resolve;
+const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
+const StatsPlugin = require('stats-webpack-plugin');
+const Visualizer = require('webpack-visualizer-plugin');
+
 module.exports = {
   devtool: 'source-map',
   target: 'web',
   entry: {
     'bundle': './app/src/index.tsx'
   },
-  context: resolve(__dirname, '../'),
   output: {
-    path: resolve(__dirname, './../dist'),
+    path: path.join(process.cwd(), './dist'),
     filename: '[name].js',
     publicPath: '/'
   },
@@ -21,8 +24,6 @@ module.exports = {
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
       },
-      // TODO: Is that have any effect
-      'DEBUG': false,
       '__DEVTOOLS__': false
     }),
     new webpack.optimize.UglifyJsPlugin({
@@ -51,9 +52,24 @@ module.exports = {
       },
 
     }),
-    // Included by default in webpack 2
-    // new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.AggressiveMergingPlugin()
+    // TODO: Check what that does
+    // new webpack.optimize.AggressiveMergingPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'app/src/index.html',
+      chunksSortMode: 'dependency',
+      baseUrl: '/'
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: require(path.join(process.cwd(), './dist/vendor.min/manifest.json')),
+    }),
+    new AddAssetHtmlPlugin({
+      filepath: require.resolve(path.join(process.cwd(), './dist/vendor.min/vendor.min.js')),
+      includeSourcemap: true
+    }),
+    new Visualizer({
+      filename: './visualizer.html'
+    }),
+    new StatsPlugin('./stats.json')
   ],
   module: {
     rules: [
@@ -61,14 +77,28 @@ module.exports = {
         enforce: 'pre',
         test: /\.js$/,
         loader: 'source-map-loader',
-        exclude: [
-          '/node_modules/'
-        ]
+        exclude: '/node_modules/'
+      },
+      {
+        enforce: 'pre',
+        test: /\.ts(x?)$/,
+        use: "source-map-loader",
+        exclude: '/node_modules/'
+      },
+      {
+        enforce: 'pre',
+        test: /\.ts(x?)$/,
+        loader: 'tslint-loader',
+        exclude: [/node_modules/]
       },
       {
         test: /\.ts(x?)$/,
-        exclude: /node_modules/,
-        loader: 'ts-loader'
+        use: [
+          {
+            loader: 'awesome-typescript-loader'
+          }
+        ],
+        include: path.join(process.cwd(), './app/src'),
       }
     ]
   }

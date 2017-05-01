@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -25,7 +26,6 @@ module.exports = {
       'errors-only': true
     }
   },
-
   context: process.cwd(),
   resolve: {
     extensions: [".ts", ".tsx", ".js"]
@@ -36,8 +36,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'app/src/index.html',
       chunksSortMode: 'dependency',
-      baseUrl: '/'
+      baseUrl: '/',
+      hash: true
     }),
+    new webpack.DllReferencePlugin({
+      manifest: require(path.join(process.cwd(), './dist/vendor/manifest.json')),
+      hash: true
+    }),
+    new AddAssetHtmlPlugin({
+      filepath: require.resolve(path.join(process.cwd(), './dist/vendor/vendor.js')),
+      includeSourcemap: false
+    })
   ],
   watchOptions: {
     poll: true
@@ -65,8 +74,12 @@ module.exports = {
       {
         test: /\.ts(x?)$/,
         use: [
-          {loader: 'react-hot-loader/webpack'},
-          {loader: 'ts-loader'}
+          {
+            loader: 'react-hot-loader/webpack'
+          },
+          {
+            loader: 'awesome-typescript-loader'
+          }
         ],
         include: path.join(process.cwd(), './app/src'),
       }

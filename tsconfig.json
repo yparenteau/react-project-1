@@ -6,10 +6,7 @@
     "jsx": "react",
     "declaration": false,
     "sourceMap": true,
-    "strict": true,
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
+    "strictNullChecks": true,
     "experimentalDecorators": true
   }
 }

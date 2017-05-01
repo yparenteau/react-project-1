@@ -18,7 +18,7 @@ export class App extends React.Component<AppProps, AppState> {
 
     return (
       <div>
-        <div>number: {currentNumber}</div>
+        <div>Number: {currentNumber}</div>
         <div>
           <button onClick={this.increment}>+</button>
         </div>
