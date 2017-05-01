@@ -1,8 +1,6 @@
 import { createStore, Store } from 'redux';
 import rootReducer, { RootState } from '../reducers';
 
-declare const module: { hot: any };
-
 export default function configureStore(initialState?: RootState): Store<RootState> {
   const store = createStore(rootReducer, initialState);
 

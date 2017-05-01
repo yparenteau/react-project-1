@@ -13,7 +13,7 @@ export default function counterReducer(state: CounterState = INITIAL_STATE, acti
     case counterActions.INCREMENT_COUNTER:
       return  {
         ...state,
-        currentNumber: state.currentNumber + 500
+        currentNumber: state.currentNumber + 1
       };
 
     default:

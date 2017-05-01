@@ -8,9 +8,6 @@ import { AppContainer } from 'react-hot-loader';
 
 const store = configureStore();
 
-// TODO: duplicated
-declare const module: { hot: any };
-
 ReactDOM.render(
   <AppContainer >
     <Root store={store}/>
