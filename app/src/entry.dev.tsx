@@ -2,7 +2,6 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
-// TODO: Should not be included in production
 import { configureStoreDev } from './store/configure-store.dev';
 
 const store = configureStoreDev();
