@@ -5,11 +5,9 @@ import Counter from './counter';
 
 export interface RootProps {
   store: RootState;
-  // dispatch: Dispatch<{}>;
 }
 
-// export class Root extends React.Component<RootProps, void> {
-export default class extends React.Component<any, void> {
+export default class extends React.Component<RootProps, void> {
   render() {
     const { store } = this.props;
 

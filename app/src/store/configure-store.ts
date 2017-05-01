@@ -1,17 +1,8 @@
 import { createStore, Store } from 'redux';
 import rootReducer, { RootState } from '../reducers';
 
-export function configureStoreDev(initialState?: RootState): Store<RootState> {
-  const store = createStore(rootReducer, initialState);
-
-  if (module.hot) {
-    module.hot.accept('../reducers/index', () => {
-      const nextReducer = require('../reducers/index').default;
-      store.replaceReducer(nextReducer);
-    });
-  }
-
-  return store;
+export function configureStore(initialState?: RootState): Store<RootState> {
+  return createStore(rootReducer, initialState);
 }
 
 
