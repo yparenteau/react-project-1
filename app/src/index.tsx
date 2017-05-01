@@ -20,7 +20,6 @@ ReactDOM.render(
 
 if (module.hot) {
   module.hot.accept('./containers/index', () => {
-    console.log('HOT!!!')
     const NewRoot = require('./containers/index').default;
     ReactDOM.render(
       <AppContainer>
