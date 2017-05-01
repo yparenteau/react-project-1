@@ -6,7 +6,6 @@
     "jsx": "react",
     "declaration": false,
     "sourceMap": true,
-    "strictNullChecks": true,
     "experimentalDecorators": true
   }
 }

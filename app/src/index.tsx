@@ -1,30 +1,32 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { App } from './containers/App/App';
-
 // TODO: Should not be included in production
+import configureStore from './store/configure-store.dev';
+import Root from './containers';
+import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 
+const store = configureStore();
+
+// TODO: duplicated
 declare const module: { hot: any };
 
-const render = (Component: any) => {
-  ReactDOM.render(
-    <AppContainer>
-      <Component />
-    </AppContainer>,
-    // HTML root element for React app
-    document.getElementById('root'));
-};
-
-render(App);
+ReactDOM.render(
+  <AppContainer >
+    <Root store={store}/>
+  </AppContainer >,
+  document.getElementById('root')
+);
 
 if (module.hot) {
-  module.hot.accept();
-  // TODO: In most example 'accept' is not empty but I can make it to work with it...
-  // module.hot.accept('./containers/App/App', () => {
-  //   // If we receive a HMR request for our App container,
-  //   // then reload it using require (we can't do this dynamically with import)
-  //   const NextApp = require('./containers/App/App').default;
-  //   render(NextApp);
-  // });
+  module.hot.accept('./containers/index', () => {
+    console.log('HOT!!!')
+    const NewRoot = require('./containers/index').default;
+    ReactDOM.render(
+      <AppContainer>
+        <NewRoot store={store} />
+      </AppContainer>,
+      document.getElementById('root')
+    );
+  });
 }
