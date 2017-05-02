@@ -1,7 +1,13 @@
 {
-  "extends": ["tslint-react", "tslint-config-airbnb"],
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-airbnb"],
   "rules": {
-    "variable-name": [true, "allow-pascal-case"],
+    "interface-name": [true, "never-prefix"],
+    "import-name": false,
+    "max-line-length": [
+      true,
+      150
+    ],
+    "member-access": [true, "no-public"],
     "trailing-comma": [
       true,
       {
@@ -9,10 +15,6 @@
         "singleline": "never"
       }
     ],
-    "max-line-length": [
-      true,
-      150
-    ],
-    "import-name": false
+    "variable-name": [true, "allow-pascal-case"]
   }
 }

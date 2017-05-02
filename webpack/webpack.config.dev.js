@@ -11,7 +11,7 @@ module.exports = {
       'react-hot-loader/patch',
       'webpack-dev-server/client?http://localhost:3000',
       'webpack/hot/only-dev-server',
-      './app/src/entry.dev.tsx'
+      './app/src/index.dev.tsx'
     ]
   },
   devServer: {

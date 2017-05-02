@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/counter.actions';
-import { RootState } from '../reducers';
 import { UselessLabel } from '../components/useless-label';
-import { uselessSelector } from '../selectors/useless.selector';
+import { RootState } from '../reducers';
+import { uselessSelector } from '../selectors/useless.selectors';
 
 interface CounterProps {
   currentNumber?: number;

@@ -14,7 +14,6 @@ export function configureStoreDev(initialState?: RootState): Store<RootState> {
   return store;
 }
 
-
 // const middlewares: Middleware[] = [];
 // const composeEnhancers =
 //   DEBUG && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;

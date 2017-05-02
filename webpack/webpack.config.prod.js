@@ -9,7 +9,7 @@ module.exports = {
   devtool: 'source-map',
   target: 'web',
   entry: {
-    'bundle': './app/src/entry.tsx'
+    'bundle': './app/src/index.tsx'
   },
   output: {
     path: path.join(process.cwd(), './dist'),

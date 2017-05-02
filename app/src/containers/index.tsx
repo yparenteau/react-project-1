@@ -1,5 +1,5 @@
-import { Provider } from 'react-redux';
 import * as React from 'react';
+import { Provider } from 'react-redux';
 import { RootState } from '../reducers';
 import Counter from './counter';
 
