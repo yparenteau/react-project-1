@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -56,15 +55,9 @@ module.exports = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.js$/,
-        loader: 'source-map-loader',
-        exclude: '/node_modules/'
-      },
-      {
-        enforce: 'pre',
         test: /\.ts(x?)$/,
         use: "source-map-loader",
-        exclude: '/node_modules/'
+        exclude: [/node_modules/]
       },
       {
         enforce: 'pre',
@@ -103,7 +96,8 @@ module.exports = {
       },
       {
         test: /\.(png|jpg)$/,
-        use: 'url-loader?limit=15000'
+        use: 'url-loader?limit=15000',
+        exclude: [/node_modules/]
       }
     ]
   }

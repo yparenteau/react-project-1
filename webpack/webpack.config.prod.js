@@ -83,15 +83,9 @@ module.exports = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.js$/,
-        loader: 'source-map-loader',
-        exclude: '/node_modules/'
-      },
-      {
-        enforce: 'pre',
         test: /\.ts(x?)$/,
         use: "source-map-loader",
-        exclude: '/node_modules/'
+        exclude: [/node_modules/]
       },
       {
         enforce: 'pre',
@@ -106,11 +100,11 @@ module.exports = {
             loader: 'awesome-typescript-loader'
           }
         ],
-        include: path.join(process.cwd(), './app/src'),
+        include: path.join(process.cwd(), './app/src')
       },
       {
         test: /\.scss/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/],
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
