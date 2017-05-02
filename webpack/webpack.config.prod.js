@@ -2,8 +2,11 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
-const StatsPlugin = require('stats-webpack-plugin');
+const WebpackWriteStatsPlugin = require('webpack-write-stats-plugin');
+const Moment = require('moment');
 const Visualizer = require('webpack-visualizer-plugin');
+
+const dateString = Moment().format('YYYYMMDD-hhMMss');
 
 module.exports = {
   devtool: 'source-map',
@@ -69,7 +72,10 @@ module.exports = {
     new Visualizer({
       filename: './visualizer.html'
     }),
-    new StatsPlugin('./stats.json')
+    new WebpackWriteStatsPlugin(path.join(process.cwd(), './dist/' + dateString + '.stats.json'), {
+      timings: true,
+      source: false
+    })
   ],
   module: {
     rules: [

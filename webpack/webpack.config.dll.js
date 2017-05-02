@@ -1,13 +1,16 @@
 const path = require('path');
 const webpack = require('webpack');
 const Visualizer = require('webpack-visualizer-plugin');
-const StatsPlugin = require('stats-webpack-plugin');
+const WebpackWriteStatsPlugin = require('webpack-write-stats-plugin');
+const Moment = require('moment');
 
 let vendorName = 'vendor';
 
 if (process.env.NODE_ENV === 'production') {
   vendorName = 'vendor.min'
 }
+
+const dateString = Moment().format('YYYYMMDD-hhMMss');
 
 const config = {
   entry: {
@@ -27,8 +30,13 @@ const config = {
     new Visualizer({
       filename: '../../dist/' + vendorName + '/visualizer.html'
     }),
-    new StatsPlugin('../../dist/' + vendorName + '/stats.json')
-  ]
+    new WebpackWriteStatsPlugin(path.join(process.cwd(), './dist/' + vendorName + '/' + dateString + '.stats.json'),  {
+      timings: true,
+      source: false
+    }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+  ],
+  profile: true
 };
 
 if (process.env.NODE_ENV === 'production') {
