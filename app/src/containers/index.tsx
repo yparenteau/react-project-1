@@ -1,18 +1,17 @@
 import * as React from 'react';
-import { Provider } from 'react-redux';
+import { Provider, Store } from 'react-redux';
 import { RootState } from '../reducers';
 import Counter from './counter';
 
 export interface RootProps {
-  store: RootState;
+  store: Store<RootState>;
 }
 
+// TODO: Stateless component?
 export default class extends React.Component<RootProps, void> {
-  render() {
-    const { store } = this.props;
-
+  render(): JSX.Element {
     return (
-      <Provider store={store}>
+      <Provider store={this.props.store}>
         <div> I AM THE ROOT
           <Counter />
         </div>

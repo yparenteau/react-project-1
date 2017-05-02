@@ -6,7 +6,7 @@ import { RootState } from '../reducers';
 import { uselessSelector } from '../selectors/useless.selectors';
 
 interface CounterProps {
-  currentNumber?: number;
+  currentNumber: number;
   incrementCounter: () => void;
   uselessLabel: string;
 }
@@ -25,7 +25,7 @@ class Counter extends React.Component<CounterProps, void> {
   }
 }
 
-const mapStateToProps = (state: RootState) => ({
+const mapStateToProps = (state: RootState): Partial<CounterProps> => ({
   currentNumber: state.counter.currentNumber,
   uselessLabel: uselessSelector(state)
 });

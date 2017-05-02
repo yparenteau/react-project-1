@@ -6,6 +6,8 @@
     "jsx": "react",
     "declaration": false,
     "sourceMap": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true
   }
 }
