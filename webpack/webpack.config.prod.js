@@ -5,6 +5,7 @@ const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const WebpackWriteStatsPlugin = require('webpack-write-stats-plugin');
 const Moment = require('moment');
 const Visualizer = require('webpack-visualizer-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const dateString = Moment().format('YYYYMMDD-hhMMss');
 
@@ -75,7 +76,8 @@ module.exports = {
     new WebpackWriteStatsPlugin(path.join(process.cwd(), './dist/' + dateString + '.stats.json'), {
       timings: true,
       source: false
-    })
+    }),
+    new ExtractTextPlugin({ filename: 'style.css', disable: false, allChunks: true })
   ],
   module: {
     rules: [
@@ -105,6 +107,33 @@ module.exports = {
           }
         ],
         include: path.join(process.cwd(), './app/src'),
+      },
+      {
+        test: /\.scss/,
+        exclude: /node_modules/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              query: {
+                modules: true,
+                camelCase: 'dashes',
+                localIdentName: '[local]_[hash:base64:5]'
+              }
+            },
+            {
+              loader: 'sass-loader',
+              query: {
+                sourceMap: true
+              }
+            }
+          ]
+        })
+      },
+      {
+        test: /\.(png|jpg)$/,
+        use: 'url-loader?limit=15000'
       }
     ]
   }

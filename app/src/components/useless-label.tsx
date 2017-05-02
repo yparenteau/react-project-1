@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+const { useLess } = require('../../assets/sass/useless-label.scss');
+
 interface UselessLabelProps {
   text: string;
 }
@@ -7,7 +9,7 @@ interface UselessLabelProps {
 export class UselessLabel extends React.Component<UselessLabelProps, void> {
   render() {
     return (
-      <h1>{this.props.text}</h1>
+      <div className={`${useLess} use-less`}>{this.props.text}</div>
     );
   }
 }

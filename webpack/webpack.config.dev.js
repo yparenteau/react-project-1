@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -74,15 +75,38 @@ module.exports = {
       {
         test: /\.ts(x?)$/,
         use: [
-          {
-            loader: 'react-hot-loader/webpack'
-          },
-          {
-            loader: 'awesome-typescript-loader'
-          }
+         'react-hot-loader/webpack',
+         'awesome-typescript-loader'
         ],
         include: path.join(process.cwd(), './app/src'),
+      },
+      {
+        test: /\.scss$/,
+        exclude: [/node_modules/],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            query: {
+              modules: true,
+              camelCase: 'dashes',
+              localIdentName: '[local]_[hash:base64:5]'
+            }
+          },
+          {
+            loader: 'sass-loader',
+            query: {
+              sourceMap: true
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(png|jpg)$/,
+        use: 'url-loader?limit=15000'
       }
     ]
   }
 };
+
+

@@ -3,6 +3,8 @@ import { Provider, Store } from 'react-redux';
 import { RootState } from '../reducers';
 import Counter from './counter';
 
+import '../../assets/sass/main.scss';
+
 export interface RootProps {
   store: Store<RootState>;
 }
