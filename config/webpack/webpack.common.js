@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 let vendorName = 'vendor';
 
@@ -43,6 +45,12 @@ module.exports = {
             query: {
               sourceMap: true
             }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [autoprefixer('last 2 versions', 'ie 11')]
+            }
           }
         ]
       })
@@ -68,7 +76,8 @@ module.exports = {
       filepath: require.resolve(path.join(process.cwd(), `./dist/${vendorName}/${vendorName}.js`)),
       includeSourcemap: false
     }),
-    new ExtractTextPlugin({ filename: 'style.css', disable: process.env.NODE_ENV !== 'production', allChunks: true })
+    new ExtractTextPlugin({ filename: 'style.css', disable: process.env.NODE_ENV !== 'production', allChunks: true }),
+    new StyleLintPlugin()
   ]
 };
 

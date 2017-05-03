@@ -11,10 +11,12 @@ interface CounterProps {
   uselessLabel: string;
 }
 
+const { counter } = require('./counter.scss');
+
 class Counter extends React.Component<CounterProps, void> {
   render() {
     return (
-      <div>
+      <div className={counter}>
         <UselessLabel text={this.props.uselessLabel} />
         <div>The current number: {this.props.currentNumber}</div>
         <div>
