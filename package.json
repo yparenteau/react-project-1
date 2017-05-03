@@ -4,10 +4,10 @@
   "license": "",
   "description": "",
   "scripts": {
-    "start": "set NODE_ENV=development&&webpack-dev-server --open --config ./webpack/webpack.config.dev.js",
-    "build": "set NODE_ENV=production&&webpack --config ./webpack/webpack.config.dll.js && webpack --config ./webpack/webpack.config.prod.js",
-    "build:dll": "set NODE_ENV=development&&webpack --config ./webpack/webpack.config.dll.js",
-    "test": "jest"
+    "start": "set NODE_ENV=development&&webpack-dev-server --open --config ./config/webpack/webpack.config.dev.js",
+    "build": "set NODE_ENV=production&&webpack --config ./config/webpack/webpack.config.dll.js && webpack --config ./config/webpack/webpack.config.prod.js",
+    "build:dll": "set NODE_ENV=development&&webpack --config config/webpack/webpack.config.dll.js",
+    "test": "set JEST_JUNIT_OUTPUT=./test-results/junit.xml&& jest --config ./config/jest/jest-config.json"
   },
   "dependencies": {
     "@types/react": "15.0.23",
@@ -61,18 +61,7 @@
     "testRegex": "(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$",
     "moduleFileExtensions": [
       "ts",
-      "tsx",
-      "js"
-    ],
-    "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js",
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "app/src/**/*.{ts,tsx}",
-      "!app/**/*.selectors.ts"
-    ],
-    "coverageReporters": [
-      "html",
-      "json"
+      "tsx"
     ]
   }
 }

@@ -28,7 +28,7 @@ const config = {
       name: 'vendor'
     }),
     new Visualizer({
-      filename: '../../dist/' + vendorName + '/visualizer.html'
+      filename: '../../../dist/' + vendorName + '/visualizer.html'
     }),
     new WebpackWriteStatsPlugin(path.join(process.cwd(), './dist/' + vendorName + '/' + dateString + '.stats.json'),  {
       timings: true,

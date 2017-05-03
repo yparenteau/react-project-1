@@ -7,6 +7,7 @@ const Moment = require('moment');
 const Visualizer = require('webpack-visualizer-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const common = require('./webpack.common');
 const dateString = Moment().format('YYYYMMDD-hhMMss');
 
 module.exports = {
@@ -24,11 +25,11 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js"]
   },
   plugins: [
+    ...common.plugins,
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
-      },
-      '__DEVTOOLS__': false
+      }
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
@@ -56,43 +57,17 @@ module.exports = {
       },
 
     }),
-    // TODO: Check what that does
-    // new webpack.optimize.AggressiveMergingPlugin(),
-    new HtmlWebpackPlugin({
-      template: 'app/src/index.html',
-      chunksSortMode: 'dependency',
-      baseUrl: '/'
-    }),
-    new webpack.DllReferencePlugin({
-      manifest: require(path.join(process.cwd(), './dist/vendor.min/manifest.json')),
-    }),
-    new AddAssetHtmlPlugin({
-      filepath: require.resolve(path.join(process.cwd(), './dist/vendor.min/vendor.min.js')),
-      includeSourcemap: true
-    }),
     new Visualizer({
       filename: './visualizer.html'
     }),
     new WebpackWriteStatsPlugin(path.join(process.cwd(), './dist/' + dateString + '.stats.json'), {
       timings: true,
       source: false
-    }),
-    new ExtractTextPlugin({ filename: 'style.css', disable: false, allChunks: true })
+    })
   ],
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.ts(x?)$/,
-        use: "source-map-loader",
-        exclude: [/node_modules/]
-      },
-      {
-        enforce: 'pre',
-        test: /\.ts(x?)$/,
-        loader: 'tslint-loader',
-        exclude: [/node_modules/]
-      },
+      ...common.loaders,
       {
         test: /\.ts(x?)$/,
         use: [
@@ -101,33 +76,6 @@ module.exports = {
           }
         ],
         include: path.join(process.cwd(), './app/src')
-      },
-      {
-        test: /\.scss/,
-        exclude: [/node_modules/],
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              query: {
-                modules: true,
-                camelCase: 'dashes',
-                localIdentName: '[local]_[hash:base64:5]'
-              }
-            },
-            {
-              loader: 'sass-loader',
-              query: {
-                sourceMap: true
-              }
-            }
-          ]
-        })
-      },
-      {
-        test: /\.(png|jpg)$/,
-        use: 'url-loader?limit=15000'
       }
     ]
   }

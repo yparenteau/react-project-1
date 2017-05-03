@@ -151,3 +151,4 @@ sftp-config.json
 
 ### Project specific ###
 dist/
+test-results/

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import { Provider } from 'react-redux';
 import { configureStoreDev } from './store/configure-store.dev';
 
 const store = configureStoreDev();
