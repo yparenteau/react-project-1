@@ -1,8 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const common = require('./webpack.common');
 
@@ -20,7 +17,6 @@ module.exports = {
   devServer: {
     hot: true,
     contentBase: path.join(process.cwd(), './app/src'),
-    publicPath: '/',
     port: 3000,
     historyApiFallback: true,
     stats: {

@@ -1,30 +1,33 @@
-import { History } from 'history';
 import * as React from 'react';
 import { Provider, Store } from 'react-redux';
-import { Router } from 'react-router';
-import { HistoryUnsubscribe } from 'react-router-redux';
+import { Redirect, Route, Router } from 'react-router';
 import { RootState } from '../reducers';
-import Counter from './counter';
+import { PositionsAndExposures } from '../positions-and-exposures/positions-and-exposures.container';
+import { Eligibility } from '../eligibility/eligibility.container';
+import createBrowserHistory from 'history/createBrowserHistory';
 
 import '../../assets/sass/main.scss';
+import { Navigation } from '../navigation/navigation.container';
 
 export interface RootProps {
   store: Store<RootState>;
-  history: History & HistoryUnsubscribe;
 }
 
 // TODO: Stateless component?
 export default class extends React.Component<RootProps, void> {
   render() {
+    const history = createBrowserHistory();
     return (
       <Provider store={this.props.store}>
-        <Router history={this.props.history}>
-          <Counter />
+        <Router history={history}>
+          <div>
+            <Navigation />
+            <Route path="/positions-and-exposures" component={PositionsAndExposures as any} />
+            <Route path="/eligibility" component={Eligibility as any} />
+            <Redirect from="/" to="/positions-and-exposures" />
+          </div>
         </Router>
       </Provider>
     );
   }
 }
-
-// <Router history={history} routes={routes} />
-// <DevTools />

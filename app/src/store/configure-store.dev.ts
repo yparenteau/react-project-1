@@ -14,10 +14,3 @@ export function configureStoreDev(): Store<RootState> {
 
   return store;
 }
-
-// const middlewares: Middleware[] = [];
-// const composeEnhancers =
-//   DEBUG && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
-// const store = createStore(rootReducer, initialState, composeEnhancers(
-//   applyMiddleware(...middlewares),
-// ));

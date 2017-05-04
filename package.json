@@ -10,13 +10,11 @@
     "test": "set JEST_JUNIT_OUTPUT=./test-results/junit.xml&& jest --config ./config/jest/jest-config.json"
   },
   "dependencies": {
-    "@types/history": "4.5.0",
     "@types/react": "15.0.23",
     "@types/react-dom": "15.5.0",
     "@types/react-redux": "4.4.40",
     "@types/react-router": "4.0.6",
     "@types/react-router-dom": "4.0.4",
-    "@types/react-router-redux": "4.0.46",
     "minireset.css": "0.0.3",
     "moment": "2.18.1",
     "react": "15.5.4",
@@ -24,7 +22,6 @@
     "react-redux": "4.4.8",
     "react-router": "4.1.1",
     "react-router-dom": "4.1.1",
-    "react-router-redux": "4.0.8",
     "redux": "3.6.0",
     "reselect": "3.0.0",
     "reset-css": "2.2.0"

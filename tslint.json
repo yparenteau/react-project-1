@@ -17,6 +17,7 @@
       }
     ],
     "ter-arrow-parens": false,
-    "variable-name": [true, "allow-pascal-case"]
+    "variable-name": [true, "allow-pascal-case"],
+    "ordered-imports": false
   }
 }
