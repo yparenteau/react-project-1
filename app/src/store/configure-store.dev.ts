@@ -1,8 +1,9 @@
 import { createStore, Store } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer, { RootState } from '../reducers';
 
-export function configureStoreDev(initialState?: RootState): Store<RootState> {
-  const store = createStore(rootReducer, initialState);
+export function configureStoreDev(): Store<RootState> {
+  const store = createStore(rootReducer, composeWithDevTools());
 
   if (module.hot) {
     module.hot.accept('../reducers/index', () => {

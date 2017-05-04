@@ -1,12 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { configureStore } from './store/configure-store';
 import Root from './containers/index';
+import { configureRouter } from './routing/configure-router';
+import { configureStore } from './store/configure-store';
 
-const store: any = configureStore();
+const store = configureStore();
+const history = configureRouter(store);
 
 ReactDOM.render(
-  <Root store={store} />,
+  <Root store={store} history={history} />,
   document.getElementById('root')
 );

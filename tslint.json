@@ -16,7 +16,7 @@
         "singleline": "never"
       }
     ],
-    "ter-arrow-parens": [false],
+    "ter-arrow-parens": false,
     "variable-name": [true, "allow-pascal-case"]
   }
 }
