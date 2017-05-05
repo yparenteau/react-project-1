@@ -8,7 +8,7 @@ export class Navigation extends React.Component<{}, void> {
     return (
      <div>
       <header>
-        <Link to="/positions-and-exposures">'Positions and exposures</Link>
+        <Link to="/positions-and-exposures">Positions and exposures</Link>
         {' '}
         <Link to="/eligibility">Eligibility</Link>
       </header>

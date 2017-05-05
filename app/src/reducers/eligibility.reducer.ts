@@ -1,21 +1,13 @@
-import { counterActions } from '../actions/counter.actions';
-
-export interface CounterState {
-  currentNumber: number;
+export interface EligibilityState {
+  title: string;
 }
 
-const INITIAL_STATE: CounterState = {
-  currentNumber: 10
+const INITIAL_STATE: EligibilityState = {
+  title: 'Eligibility'
 };
 
-export default function counterReducer(state: CounterState = INITIAL_STATE, action: any): CounterState {
+export default function eligibilityReducer(state: EligibilityState = INITIAL_STATE, action: any): EligibilityState {
   switch (action.type) {
-    case counterActions.INCREMENT_COUNTER:
-      return  {
-        ...state,
-        currentNumber: state.currentNumber + 1
-      };
-
     default:
       return state;
   }

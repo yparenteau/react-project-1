@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux';
-import counterReducer, { CounterState } from './counter.reducer';
+import positionExposuresReducer, { PositionExposuresState } from './positions-exposures-reducer';
+import eligibilityReducer, { EligibilityState } from './eligibility.reducer';
 
 export interface RootState {
-  counter: CounterState;
+  positionExposures: PositionExposuresState;
+  eligibility: EligibilityState;
 }
 
 export default combineReducers<RootState>({
-  counter: counterReducer
+  eligibility: eligibilityReducer,
+  positionExposures: positionExposuresReducer
 });

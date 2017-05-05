@@ -10,14 +10,14 @@ export class PositionsAndExposures extends React.Component<PositionsAndExposures
   render() {
     return (
       <div>
-        Positions and exposures
+        {this.props.title}
       </div>
     );
   }
 }
 
 const mapStateToProps = (state: RootState): Partial<PositionsAndExposuresProps> => ({
-  title: 'Positions and exposures'
+  title: state.positionExposures.title
 });
 
 const mapDispatchToProps = {
