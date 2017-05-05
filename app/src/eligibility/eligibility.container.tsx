@@ -6,15 +6,11 @@ interface EligibilityProps  {
   title: string;
 }
 
-export class Eligibility extends React.Component<EligibilityProps, void> {
-  render() {
-    return (
-      <div>
-        Eligibility
-      </div>
-    );
-  }
-}
+const Eligibility: React.StatelessComponent<EligibilityProps> = props => (
+  <div>
+    {props.title}
+  </div>
+);
 
 const mapStateToProps = (state: RootState): Partial<EligibilityProps> => ({
   title: 'Eligibility'
