@@ -1,0 +1,10 @@
+@import '~minireset.css/minireset.sass';
+
+body {
+  font-size: 20px;
+  min-height: 100%;
+  background-image: url(../images/react.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 5px;
+}
