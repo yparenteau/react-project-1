@@ -1,11 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const WebpackWriteStatsPlugin = require('webpack-write-stats-plugin');
 const Moment = require('moment');
 const Visualizer = require('webpack-visualizer-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const common = require('./webpack.common');
 const dateString = Moment().format('YYYYMMDD-hhMMss');
@@ -14,7 +11,7 @@ module.exports = {
   devtool: 'source-map',
   target: 'web',
   entry: {
-    'bundle': './app/src/index.tsx'
+    'bundle':  ['whatwg-fetch', './app/src/index.tsx']
   },
   output: {
     path: path.join(process.cwd(), './dist'),
