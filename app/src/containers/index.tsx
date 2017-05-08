@@ -4,7 +4,6 @@ import { RootState } from '../reducers';
 import PositionsAndExposures from './positions-and-exposures.container';
 import Eligibility from './eligibility.container';
 
-import '../../assets/sass/main.scss';
 import { Navigation } from './navigation.container';
 import {
   BrowserRouter as Router,
@@ -16,6 +15,8 @@ import * as ES6Promise from 'es6-promise';
 
 // TODO: Should be done at the bootstrapping
 ES6Promise.polyfill();
+
+import '../../assets/sass/main.scss';
 
 interface RootProps {
   store: Store<RootState>;
