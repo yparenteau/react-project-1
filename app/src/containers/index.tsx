@@ -5,6 +5,8 @@ import PositionsAndExposures from './positions-and-exposures.container';
 import Eligibility from './eligibility.container';
 
 import { Navigation } from './navigation.container';
+import { NavigationContainer } from 'bny-shell';
+
 import {
   BrowserRouter as Router,
   Route,
@@ -26,9 +28,9 @@ const Root: React.StatelessComponent<RootProps> = props => {
   const {store} = props;
   return (
     <Provider store={store}>
-       {/*TODO: Check how we can remove that key={Math.random()} to avoid HMR warning*/}
       <Router>
         <div>
+          <NavigationContainer />
           <Navigation />
           <Switch>
             <Route path="/positions-and-exposures" component={PositionsAndExposures as any} />
