@@ -5,7 +5,6 @@ import PositionsAndExposures from './positions-and-exposures.container';
 import Eligibility from './eligibility.container';
 
 import { Navigation } from './navigation.container';
-import { NavigationContainer } from 'bny-shell';
 
 import {
   BrowserRouter as Router,
@@ -19,6 +18,7 @@ import * as ES6Promise from 'es6-promise';
 ES6Promise.polyfill();
 
 import '../../assets/sass/main.scss';
+import { ShellHeaderContainer } from 'bny-shell';
 
 interface RootProps {
   store: Store<RootState>;
@@ -30,7 +30,7 @@ const Root: React.StatelessComponent<RootProps> = props => {
     <Provider store={store}>
       <Router>
         <div>
-          <NavigationContainer />
+          <ShellHeaderContainer />
           <Navigation />
           <Switch>
             <Route path="/positions-and-exposures" component={PositionsAndExposures as any} />

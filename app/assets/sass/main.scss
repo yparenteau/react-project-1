@@ -1,14 +1,12 @@
 @import '~minireset.css/minireset.sass';
 
 :global {
-  @import '~bny-shell/dist/style';
+  @import '~bny-shell/dist/bny-shell';
 }
 
 body {
-  font-size: 20px;
-  min-height: 100%;
-  background-image: url(../images/react.png);
-  background-repeat: no-repeat;
-  background-position: center center;
   padding: 10px;
+  min-height: 100%;
+  background: url(../images/react.png) no-repeat center center;
+  font-size: 20px;
 }
