@@ -1,5 +1,11 @@
+@import "../../assets/sass/variables";
+
 :global {
   @import '~bnym-shell/dist/bnym-shell';
+
+  .shell-header {
+    background-color: $color-brand;
+  }
 
   .shell-application-logo {
     background: url(../images/application-logo.png) no-repeat center center;

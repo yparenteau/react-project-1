@@ -1,10 +1,12 @@
+@import "../../assets/sass/variables";
+
 .item {
   flex-grow: 1;
   display: flex;
   align-items: center;
   height: 32px;
   margin: 0 5px;
-  background-color: #2b3036;
+  background-color: $color-gray;
 
   &:first-child {
     margin-left: 0;
@@ -13,18 +15,34 @@
   &:last-child {
     margin-right: 0;
   }
+
+  &:hover:not(.disabled) {
+    background-color: $color-primary;
+
+    .item-content {
+      color: $color-gray-darkest;
+    }
+  }
 }
 
 .item-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
   width: 100%;
-  color: #cdd0d2;
+  color: $color-gray-lightest;
   font-size: 14px;
   font-weight: bold;
-  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
 }
 
 .disabled {
   background-image: url(./top-navigation-item-background.png);
+
+  .item-content {
+    color: $color-gray-lighter;
+  }
 }

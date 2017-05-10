@@ -1,11 +1,17 @@
+@import "../../assets/sass/variables";
+
 :global {
   body {
-    background-color: #2b3136;
+    background-color: $color-gray;
   }
 
   * {
     font-size: 12px;
     font-family: AkkuratBoldBold, sans-serif;
+
+    &:focus {
+      outline: solid 1px $color-primary;
+    }
   }
 
   .btn {
