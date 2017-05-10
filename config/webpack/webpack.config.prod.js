@@ -11,7 +11,7 @@ module.exports = {
   devtool: 'source-map',
   target: 'web',
   entry: {
-    'chailly':  ['whatwg-fetch', './app/src/index.tsx']
+    'chailly':  ['whatwg-fetch', './src/index.tsx']
   },
   output: {
     path: path.join(process.cwd(), './dist'),
@@ -72,7 +72,7 @@ module.exports = {
             loader: 'awesome-typescript-loader'
           }
         ],
-        include: path.join(process.cwd(), './app/src')
+        include: path.join(process.cwd(), './src')
       }
     ]
   }

@@ -1,4 +1,4 @@
-import { uselessMapper } from '../app/src/view-mappers/useless.view-mapper';
+import { uselessMapper } from '../src/view-mappers/useless.view-mapper';
 
 describe('useless.view-mapper', () => {
   test('useless mapper properly map', () => {

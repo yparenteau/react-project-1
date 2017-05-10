@@ -10,15 +10,14 @@ module.exports = {
     'chailly': [
       'whatwg-fetch',
       'react-hot-loader/patch',
-      'webpack-dev-server/client?http://localhost:3002',
       'webpack/hot/only-dev-server',
-      './app/src/index.dev.tsx'
+      './src/index.dev.tsx'
     ]
   },
   devServer: {
     hot: true,
-    contentBase: path.join(process.cwd(), './app/src'),
-    port: 3002,
+    contentBase: path.join(process.cwd(), './src'),
+    port: 3000,
     historyApiFallback: true,
     stats: {
       colors: true,
@@ -47,7 +46,7 @@ module.exports = {
           'react-hot-loader/webpack',
           'awesome-typescript-loader'
         ],
-        include: path.join(process.cwd(), './app/src'),
+        include: path.join(process.cwd(), './src'),
       },
     ]
   }

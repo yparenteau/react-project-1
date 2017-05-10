@@ -81,7 +81,7 @@ module.exports = {
   ],
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'app/src/index.html',
+      template: 'src/index.html',
       chunksSortMode: 'dependency',
       baseUrl: '/',
       hash: true

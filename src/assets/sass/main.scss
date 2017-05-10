@@ -1,8 +1,8 @@
 // TODO: Webpack is not reloading when this file changes
 
 :global {
-  @import '~minireset.css/minireset.sass';
-  @import '~bny-shell/dist/bny-shell';
+  @import '../../../node_modules/minireset.css/minireset';
+  @import '../../../node_modules/bny-shell/dist/bny-shell';
   @import 'shell';
 
   //@font-face {

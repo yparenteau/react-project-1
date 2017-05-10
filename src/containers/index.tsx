@@ -12,7 +12,7 @@ import {
   Switch
 } from 'react-router-dom';
 
-import '../../assets/sass/main.scss';
+import '../assets/sass/main.scss';
 
 import { ShellHeaderContainer } from 'bny-shell';
 

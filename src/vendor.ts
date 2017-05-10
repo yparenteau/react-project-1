@@ -1,4 +1,5 @@
 import * as ES6Promise from 'es6-promise';
+import 'classnames';
 import 'moment';
 import 'react';
 import 'react-dom';

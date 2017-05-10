@@ -14,7 +14,7 @@ const dateString = Moment().format('YYYYMMDD-hhMMss');
 
 const config = {
   entry: {
-    [vendorName]: [path.join(process.cwd(), './app/vendor.ts')]
+    [vendorName]: [path.join(process.cwd(), './src/vendor.ts')]
   },
   output: {
     path: path.join(process.cwd(), './dist/' + vendorName),

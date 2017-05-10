@@ -11,8 +11,8 @@
   "testResultsProcessor": "<rootDir>/config/jest/jest-result-processors",
   "collectCoverage": true,
   "collectCoverageFrom": [
-    "app/src/**/*.{ts,tsx}",
-    "!app/**/*.selectors.ts"
+    "src/**/*.{ts,tsx}",
+    "!**/*.selectors.ts"
   ],
   "coverageReporters": [
     "html",
