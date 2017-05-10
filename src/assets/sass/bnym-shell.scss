@@ -1,0 +1,12 @@
+:global {
+  @import '~bnym-shell/dist/bnym-shell';
+
+  .shell-application-logo {
+    background: url(../images/application-logo.png) no-repeat center center;
+  }
+
+  .shell-application-title {
+    font-family: AkkuratRegular, sans-serif;
+    font-size: 18px;
+  }
+}

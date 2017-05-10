@@ -1,29 +1,11 @@
-// TODO: Webpack is not reloading when this file changes
-
 :global {
-  @import '../../../node_modules/minireset.css/minireset';
-  @import '../../../node_modules/bny-shell/dist/bny-shell';
-  @import 'shell';
-
-  //@font-face {
-  //  font-family: 'Chailly-Light';
-  //  font-style: normal;
-  //  font-weight: 400;
-  //  src:
-  //    local('Montserrat Regular'),
-  //    local('Montserrat-Regular'),
-  //    url('../fonts/montserrat-v10-latin-regular.woff2') format('woff2'),
-  //    url('../fonts/montserrat-v10-latin-regular.woff') format('woff');
-  //}
-
   body {
-    padding: 10px;
     background-color: #2b3136;
   }
 
   * {
     font-size: 12px;
-    font-family: sans-serif;
+    font-family: AkkuratBoldBold, sans-serif;
   }
 
   .btn {

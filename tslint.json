@@ -18,6 +18,7 @@
     ],
     "ter-arrow-parens": false,
     "variable-name": [true, "allow-pascal-case"],
-    "ordered-imports": false
+    "ordered-imports": false,
+    "jsx-no-multiline-js": false
   }
 }

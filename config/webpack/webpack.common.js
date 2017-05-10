@@ -27,8 +27,7 @@ module.exports = {
       exclude: [/node_modules/]
     },
     {
-      test: /\.scss/,
-      exclude: [/node_modules/],
+      test: /\.(css|scss|sass)$/,
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
         use: [
@@ -37,7 +36,7 @@ module.exports = {
             query: {
               modules: true,
               camelCase: 'dashes',
-              localIdentName: '[local]_[hash:base64:5] [local]'
+              localIdentName: '[local]_[hash:base64:5]'
             }
           },
           {

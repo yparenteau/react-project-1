@@ -1,0 +1,30 @@
+.item {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  margin: 0 5px;
+  background-color: #2b3036;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.item-content {
+  width: 100%;
+  color: #cdd0d2;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.disabled {
+  background-image: url(./top-navigation-item-background.png);
+}
