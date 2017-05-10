@@ -15,7 +15,7 @@ export class PositionsAndExposures extends React.Component<PositionsAndExposures
       <div>
         <div>{title}</div>
         <div>
-          <button onClick={onFetch}>Fetch data</button>
+          <button className="btn" onClick={onFetch}>Fetch data</button>
         </div>
       </div>
     );

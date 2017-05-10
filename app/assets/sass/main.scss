@@ -1,12 +1,48 @@
-@import '~minireset.css/minireset.sass';
+// TODO: Webpack is not reloading when this file changes
 
 :global {
+  @import '~minireset.css/minireset.sass';
   @import '~bny-shell/dist/bny-shell';
-}
+  @import 'shell';
 
-body {
-  padding: 10px;
-  min-height: 100%;
-  background: url(../images/react.png) no-repeat center center;
-  font-size: 20px;
+  //@font-face {
+  //  font-family: 'Chailly-Light';
+  //  font-style: normal;
+  //  font-weight: 400;
+  //  src:
+  //    local('Montserrat Regular'),
+  //    local('Montserrat-Regular'),
+  //    url('../fonts/montserrat-v10-latin-regular.woff2') format('woff2'),
+  //    url('../fonts/montserrat-v10-latin-regular.woff') format('woff');
+  //}
+
+  body {
+    padding: 10px;
+    background-color: #2b3136;
+  }
+
+  * {
+    font-size: 12px;
+    font-family: sans-serif;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+    padding-left: 5px;
+    height: 22px;
+
+    .icon {
+      width: 10px;
+
+      &.left {
+        margin-right: 10px;
+      }
+
+      &.right {
+        margin-left: 10px;
+      }
+    }
+  }
 }

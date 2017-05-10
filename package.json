@@ -11,6 +11,7 @@
     "test": "set JEST_JUNIT_OUTPUT=./test-results/junit.xml&& jest --config ./config/jest/jest-config.json"
   },
   "dependencies": {
+    "@types/classnames": "0.0.32",
     "@types/react": "15.0.23",
     "@types/react-dom": "15.5.0",
     "@types/react-redux": "4.4.40",
@@ -18,6 +19,7 @@
     "@types/react-router-dom": "4.0.4",
     "@types/redux-saga": "0.10.5",
     "bny-shell": "file:../shell/bny-shell-0.0.1.tgz",
+    "classnames": "2.2.5",
     "es6-promise": "4.1.0",
     "minireset.css": "0.0.3",
     "moment": "2.18.1",

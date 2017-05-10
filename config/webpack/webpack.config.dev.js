@@ -7,10 +7,10 @@ module.exports = {
   devtool: 'inline-source-map',
   target: 'web',
   entry: {
-    'bundle': [
+    'chailly': [
       'whatwg-fetch',
       'react-hot-loader/patch',
-      'webpack-dev-server/client?http://localhost:3000',
+      'webpack-dev-server/client?http://localhost:3002',
       'webpack/hot/only-dev-server',
       './app/src/index.dev.tsx'
     ]
@@ -18,7 +18,7 @@ module.exports = {
   devServer: {
     hot: true,
     contentBase: path.join(process.cwd(), './app/src'),
-    port: 3000,
+    port: 3002,
     historyApiFallback: true,
     stats: {
       colors: true,

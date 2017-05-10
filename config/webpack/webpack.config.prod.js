@@ -11,7 +11,7 @@ module.exports = {
   devtool: 'source-map',
   target: 'web',
   entry: {
-    'bundle':  ['whatwg-fetch', './app/src/index.tsx']
+    'chailly':  ['whatwg-fetch', './app/src/index.tsx']
   },
   output: {
     path: path.join(process.cwd(), './dist'),
