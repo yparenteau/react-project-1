@@ -3,13 +3,9 @@ import { connect } from 'react-redux';
 import { RootState } from '../reducers';
 import { TopNavigationComponent } from '../components/top-navigation/top-navigation.component';
 
-export class TopNavigationContainer extends React.Component<{}, void> {
-  render() {
-    return (
-      <TopNavigationComponent />
-    );
-  }
-}
+const Container: React.StatelessComponent<{}> = props => (
+  <TopNavigationComponent />
+);
 
 const mapStateToProps = (state: RootState): Partial<{}> => ({
 });
@@ -17,4 +13,4 @@ const mapStateToProps = (state: RootState): Partial<{}> => ({
 const mapDispatchToProps = {
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TopNavigationContainer);
+export const TopNavigationContainer = connect(mapStateToProps, mapDispatchToProps)(Container);

@@ -1,33 +1,27 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { RootState } from '../reducers';
-import { positionExposureActions } from '../actions/positions-exposures.actions';
+import { ExposureNavigationComponent } from '../components/exposure-navigation/exposure-navigation.component';
 
 interface PositionsAndExposuresProps  {
-  title: string;
-  onFetch: () => void;
+  somethingList: any[];
 }
 
-export class PositionsAndExposures extends React.Component<PositionsAndExposuresProps, void> {
-  render() {
-    const {title, onFetch} = this.props;
-    return (
-      <div>
-        <div>{title}</div>
-        <div>
-          <button className="btn" onClick={onFetch}>Fetch data</button>
-        </div>
-      </div>
-    );
-  }
-}
+const Container: React.StatelessComponent<PositionsAndExposuresProps> = props => (
+  <div>
+    <ExposureNavigationComponent {...props} />
+  </div>
+);
 
 const mapStateToProps = (state: RootState): Partial<PositionsAndExposuresProps> => ({
-  title: state.positionExposures.title
+  somethingList: [
+    {label: 'Choice 1', value: '1'},
+    {label: 'Choice 2', value: '2'},
+    {label: 'Verrrryyy looooooooooooooooooooooooong Choice 3', value: '3'},
+  ]
 });
 
 const mapDispatchToProps = {
-  onFetch: positionExposureActions.fetchUsers
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PositionsAndExposures);
+export const PositionsAndExposuresContainer = connect(mapStateToProps, mapDispatchToProps)(Container);

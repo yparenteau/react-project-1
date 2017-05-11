@@ -1,6 +1,7 @@
-@import "../../assets/sass/variables";
-
 :global {
+  @import "../../assets/sass/variables";
+  @import "./react-select";
+
   body {
     background-color: $color-gray;
   }

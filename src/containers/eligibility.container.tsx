@@ -6,10 +6,8 @@ interface EligibilityProps  {
   title: string;
 }
 
-const Eligibility: React.StatelessComponent<EligibilityProps> = props => (
-  <div>
-    {props.title}
-  </div>
+const Container: React.StatelessComponent<EligibilityProps> = props => (
+  <div>{props.title}</div>
 );
 
 const mapStateToProps = (state: RootState): Partial<EligibilityProps> => ({
@@ -19,4 +17,4 @@ const mapStateToProps = (state: RootState): Partial<EligibilityProps> => ({
 const mapDispatchToProps = {
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Eligibility);
+export const EligibilityContainer = connect(mapStateToProps, mapDispatchToProps)(Container);

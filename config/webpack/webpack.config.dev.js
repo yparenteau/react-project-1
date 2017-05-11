@@ -17,7 +17,7 @@ module.exports = {
   devServer: {
     hot: true,
     contentBase: path.join(process.cwd(), './src'),
-    port: 3000,
+    port: process.env.npm_config_port || 3000,
     historyApiFallback: true,
     stats: {
       colors: true,
