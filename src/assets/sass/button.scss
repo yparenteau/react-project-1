@@ -1,13 +1,17 @@
 @import "../../assets/sass/variables";
 
-.btn {
-  display: flex;
-  align-items: center;
-  padding: 0 15px;
+.default {
+  composes: default from './typography.scss';
+  display: block;
   height: 24px;
+  padding: 0 15px;
   border: none;
   color: $color-gray-light;
   background-color: $color-gray-darker;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
 
   &:hover:not(:disabled) {
     background: $color-primary;
@@ -20,7 +24,11 @@
   }
 
   &:disabled {
-    background-color: $color-gray;
+    opacity: 0.5;
   }
 }
 
+.primary {
+  background: $color-primary;
+  color: $color-gray-darker;
+}

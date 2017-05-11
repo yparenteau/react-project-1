@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { RootState } from '../reducers';
-import { ExposureNavigationComponent } from '../components/exposure-navigation/exposure-navigation.component';
+import { ExposureNavigation } from '../components/exposure-navigation/exposure-navigation.component';
 
 interface PositionsAndExposuresProps  {
   somethingList: any[];
@@ -9,7 +9,7 @@ interface PositionsAndExposuresProps  {
 
 const Container: React.StatelessComponent<PositionsAndExposuresProps> = props => (
   <div>
-    <ExposureNavigationComponent {...props} />
+    <ExposureNavigation {...props} />
   </div>
 );
 

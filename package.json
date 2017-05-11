@@ -58,7 +58,6 @@
     "react-docgen-typescript": "0.0.10",
     "react-hot-loader": "3.0.0-beta.6",
     "react-storybook-addon-backgrounds": "0.0.7",
-    "react-styleguidist": "5.2.1",
     "redux-devtools-extension": "2.13.1",
     "sass-loader": "6.0.3",
     "source-map-loader": "0.2.1",

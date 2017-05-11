@@ -7,7 +7,6 @@ import {setAddon} from "@kadira/storybook/dist/client/index";
 import '../src/assets/fonts/akkurat/akkurat.scss';
 import '../src/assets/fonts/akkurat-bold/akkurat-bold.scss';
 import '../src/assets/sass/global.scss';
-const a = require('../src/assets/sass/variables.scss');
 
 addDecorator(story => (
   <div style={{padding: 15}}>{story()}</div>

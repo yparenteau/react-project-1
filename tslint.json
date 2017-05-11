@@ -20,6 +20,7 @@
     "variable-name": [true, "allow-pascal-case"],
     "ordered-imports": false,
     "object-literal-sort-keys": false,
-    "jsx-no-multiline-js": false
+    "jsx-no-multiline-js": false,
+    "jsx-alignment": false
   }
 }

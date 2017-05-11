@@ -10,7 +10,7 @@ interface TopNavigationItemProps {
 
 const styles = require('./top-navigation-item.scss');
 
-export const TopNavigationItemComponent: React.StatelessComponent<TopNavigationItemProps> = props => (
+export const TopNavigationItem: React.StatelessComponent<TopNavigationItemProps> = props => (
   <div className={classNames(styles.item, {[styles.disabled]: props.disabled})}>
     {
       props.disabled

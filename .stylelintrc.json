@@ -8,6 +8,9 @@
     "selector-no-vendor-prefix": true,
     "selector-pseudo-class-no-unknown": [true, {
       "ignorePseudoClasses": ["global"]
+    }],
+    "property-no-unknown": [true, {
+      "ignoreProperties": ["composes"]
     }]
   }
 }

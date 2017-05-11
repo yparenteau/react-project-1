@@ -6,7 +6,7 @@ interface Props {
   somethingList: any[];
 }
 
-export const ExposureNavigationComponent: React.StatelessComponent<Props> = props => (
+export const ExposureNavigation: React.StatelessComponent<Props> = props => (
   <div className={styles.exposureNavigation}>
     <div className={styles.selectContainer}>
       <h1>Something will appear here</h1>

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { RootState } from '../reducers';
-import { TopNavigationComponent } from '../components/top-navigation/top-navigation.component';
+import { TopNavigation } from '../components/top-navigation/top-navigation.component';
 
 const Container: React.StatelessComponent<{}> = props => (
-  <TopNavigationComponent />
+  <TopNavigation />
 );
 
 const mapStateToProps = (state: RootState): Partial<{}> => ({
