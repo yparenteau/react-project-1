@@ -152,3 +152,8 @@ sftp-config.json
 ### Project specific ###
 dist/
 test-results/
+src/**/*.js
+src/**/*.js.map
+test/**/*.js
+test/**/*.js.map
+

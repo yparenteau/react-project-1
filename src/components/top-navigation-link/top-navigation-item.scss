@@ -20,7 +20,7 @@
     background-color: $color-primary;
 
     .item-content {
-      color: $color-gray-darkest;
+      color: $color-gray-darker;
     }
   }
 }
@@ -32,17 +32,21 @@
   text-align: center;
   height: 100%;
   width: 100%;
-  color: $color-gray-lightest;
+  color: $color-gray-light;
   font-size: 14px;
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
+
+  &:focus {
+    outline: solid 1px $color-primary;
+  }
 }
 
 .disabled {
   background-image: url(./top-navigation-item-background.png);
 
   .item-content {
-    color: $color-gray-lighter;
+    color: $color-gray-light;
   }
 }

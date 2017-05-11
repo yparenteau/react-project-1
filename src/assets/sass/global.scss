@@ -1,0 +1,14 @@
+:global {
+  @import '~minireset.css/minireset';
+  @import '~bnym-shell/dist/bnym-shell';
+  @import "./bnym-shell-overrides";
+
+  body {
+    background-color: $color-gray;
+  }
+
+  * {
+    font-size: 12px;
+    font-family: AkkuratBoldBold, sans-serif;
+  }
+}
