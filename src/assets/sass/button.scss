@@ -1,0 +1,26 @@
+@import "../../assets/sass/variables";
+
+.btn {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  height: 24px;
+  border: none;
+  color: $color-gray-light;
+  background-color: $color-gray-darker;
+
+  &:hover:not(:disabled) {
+    background: $color-primary;
+    color: $color-gray-darker;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: solid 1px $color-primary;
+  }
+
+  &:disabled {
+    background-color: $color-gray;
+  }
+}
+

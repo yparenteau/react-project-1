@@ -7,11 +7,9 @@ import { PositionsAndExposuresContainer } from './positions-and-exposures.contai
 import { EligibilityContainer } from './eligibility.container';
 import { TopNavigationContainer } from './top-navigation.container';
 
-import 'minireset.css/minireset.css';
 import '../assets/fonts/akkurat/akkurat.scss';
 import '../assets/fonts/akkurat-bold/akkurat-bold.scss';
-import '../assets/sass/main.scss';
-import '../assets/sass/bnym-shell.scss';
+import '../assets/sass/global.scss';
 
 interface RootProps {
   store: Store<RootState>;
