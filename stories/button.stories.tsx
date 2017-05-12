@@ -28,40 +28,38 @@ stories.addWithInfo('Default (only button class)',
     </button>
 ));
 
-stories.addWithInfo('Primary',
-  'Hover state is the same as the normal state in the VD.',
-  () => (
-    <button
-      disabled={boolean('Disabled', false)}
+stories.add('Primary', () => (
+  <button
+    disabled={boolean('Disabled', false)}
+    onClick={action('button-click')}
+    style={object('Style', styles)}
+    className={buttonStyles.primary}>{text('Label', 'Button label')}</button>
+));
+
+stories.add('Icons only', () => (
+  <div style={{display: 'flex'}}>
+    <ButtonRefresh
+      style={{'margin-left': 15}}
       onClick={action('button-click')}
-      style={object('Style', styles)}
-      className={classNames(buttonStyles.default, buttonStyles.primary)}
-    >{text('Label', 'Button label')}
-    </button>
-  ));
+      title={text('Label', '')}
+      disabled={boolean('Disabled', false)} />
 
-stories.addWithInfo('Icons only',
-  'Hover state is the same as the normal state in the VD.',
-  () => (
-    <div style={{display: 'flex'}}>
-      <ButtonRefresh style={{'margin-left': 15}}
-                     onClick={action('button-click')}
-                     title={text('Label', '')}
-                     disabled={boolean('Disabled', false)} />
+    <ButtonDownload
+      style={{'margin-left': 15}}
+      onClick={action('button-click')}
+      title={text('Label', '')}
+      disabled={boolean('Disabled', false)} />
 
-      <ButtonDownload style={{'margin-left': 15}}
-                      onClick={action('button-click')}
-                      title={text('Label', '')}
-                      disabled={boolean('Disabled', false)} />
+    <ButtonFilter
+      style={{'margin-left': 15}}
+      onClick={action('button-click')}
+      title={text('Label', '')}
+      disabled={boolean('Disabled', false)} />
 
-      <ButtonFilter style={{'margin-left': 15}}
-                    onClick={action('button-click')}
-                    title={text('Label', '')}
-                    disabled={boolean('Disabled', false)} />
-
-      <ButtonUpload style={{'margin-left': 15}}
-                    onClick={action('button-click')}
-                    title={text('Label', '')}
-                    disabled={boolean('Disabled', false)} />
-    </div>
-  ));
+    <ButtonUpload
+      style={{'margin-left': 15}}
+      onClick={action('button-click')}
+      title={text('Label', '')}
+      disabled={boolean('Disabled', false)} />
+  </div>
+));

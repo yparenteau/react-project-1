@@ -29,6 +29,7 @@
 }
 
 .primary {
+  composes: default;
   background: $color-primary;
   color: $color-gray-darker;
 }
