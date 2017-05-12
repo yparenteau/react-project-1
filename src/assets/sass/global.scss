@@ -2,6 +2,7 @@
   @import '~minireset.css/minireset';
   @import '~bnym-shell/dist/bnym-shell';
   @import "./bnym-shell-overrides";
+  @import "./react-select";
 
   body {
     background-color: $color-gray;

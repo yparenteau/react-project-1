@@ -1,14 +1,12 @@
-import * as classNames from 'classnames';
 import * as React from 'react';
 
 const DEFAULT_TITLE = 'Upload';
-const buttonStyles = require('../../assets/sass/button.scss');
-const uploadStyles = require('./button-upload.scss');
+const styles = require('./button-upload.scss');
 
 export const ButtonUpload: React.StatelessComponent<React.HTMLProps<HTMLButtonElement>> = props => (
   <button
     {...props}
-    className={classNames(buttonStyles.default, uploadStyles.button)}
+    className={styles.default}
     title={props.title || DEFAULT_TITLE}>
     <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="18" height="19" viewBox="0 0 18 19">
       <defs>

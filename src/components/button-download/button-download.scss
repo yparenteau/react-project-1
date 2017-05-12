@@ -1,6 +1,7 @@
 @import "../../assets/sass/variables";
 
 .default {
+  composes: default from '../../assets/sass/button.scss';
   width: 24px;
   padding: 2px 0 0;
 

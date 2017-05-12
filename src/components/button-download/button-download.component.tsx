@@ -1,14 +1,12 @@
-import * as classNames from 'classnames';
 import * as React from 'react';
 
 const DEFAULT_TITLE = 'Download';
-const buttonStyles = require('../../assets/sass/button.scss');
-const downloadStyles = require('./button-download.scss');
+const styles = require('./button-download.scss');
 
 export const ButtonDownload: React.StatelessComponent<React.HTMLProps<HTMLButtonElement>> = props => (
   <button
     {...props}
-    className={classNames(buttonStyles.default, downloadStyles.button)}
+    className={styles.default}
     title={props.title || DEFAULT_TITLE}>
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17">
       <g fill="#D0D3D6" fill-rule="evenodd">

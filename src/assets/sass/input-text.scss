@@ -4,7 +4,7 @@
   composes: default from './typography.scss';
   height: $input-heigth;
   width: 100%;
-  border: solid 1px $default-color-border;
+  border: solid 1px $color-border;
   padding: 0 8px;
   color: $color-gray-lighter;
   background-color: $color-gray-darker;
@@ -17,6 +17,18 @@
   &:hover:not(:disabled) {
     outline: solid 1px $color-primary;
   }
+
+  &::placeholder {
+    color: $color-gray-lighter;
+    opacity: 0.4;
+  }
+
+  // PostCss seems to not handle placeholder for ie 11
+  /* stylelint-disable */
+  &:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+  /* stylelint-enable  */
 }
 
 .error {
